@@ -3,7 +3,6 @@
 题号：SQL23
 题目：统计每个学校各难度的用户平均刷题数
 难度：中等
-链接：https://www.nowcoder.com/practice/...（可选，如果有具体链接）
 
 题目描述：
 - 需要统计每个学校、每个难度的用户平均刷题数
@@ -18,28 +17,29 @@
 */
 
 -- ========== 我的解答 ==========
-SELECT
-    u.university,
-    qd.difficult_level,
-    ROUND(COUNT(qpd.id) / COUNT(DISTINCT u.device_id), 4) AS avg_answer_cnt
-FROM
-    user_profile u
-JOIN
-    question_practice_detail qpd ON u.device_id = qpd.device_id
-JOIN
-    question_detail qd ON qpd.question_id = qd.question_id
-GROUP BY
-    u.university, qd.difficult_level
-ORDER BY
-    u.university, qd.difficult_level;
+select 
+  up.university,
+  ql.difficult_level,
+  round(count(qd.id)/count(distinct up.device_id),4) avg_answer_cnt 
+from 
+  user_profile up 
+join
+  question_practice_detail qd on up.device_id=qd.device_id 
+join
+  question_detail ql on qd.question_id=ql.question_id 
+group by 
+  up.university,ql.difficult_level 
+order by 
+  up.university,ql.difficult_level;
 
 /*
 执行结果：通过
-提交时间：2025.XX.XX
+提交时间：2025.1.24
 
 关键学习点：
 1. 多表JOIN的使用（特别是通过中间表连接）
 2. COUNT(DISTINCT ...) 用于计算独立用户数
 3. ROUND函数控制小数位数
 4. GROUP BY 多个字段的分组统计
+
 */
