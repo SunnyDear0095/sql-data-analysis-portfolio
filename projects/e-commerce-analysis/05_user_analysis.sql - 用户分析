@@ -1,0 +1,31 @@
+-- 用户行为分析
+-- 1. 消费最多的用户（TOP 5）
+SELECT 
+    user_id,
+    COUNT(DISTINCT order_id) AS 订单数,
+    SUM(price * quantity) AS 总消费金额,
+    SUM(quantity) AS 购买商品总数
+FROM ecommerce_orders
+GROUP BY user_id
+ORDER BY 总消费金额 DESC
+LIMIT 5;
+
+-- 2. 用户复购分析（购买2次以上的用户）
+SELECT 
+    user_id,
+    COUNT(DISTINCT order_id) AS 购买次数,
+    SUM(price * quantity) AS 总消费金额
+FROM ecommerce_orders
+GROUP BY user_id
+HAVING COUNT(DISTINCT order_id) >= 2
+ORDER BY 购买次数 DESC;
+
+-- 3. 用户首次购买和最近购买
+SELECT 
+    user_id,
+    MIN(order_date) AS 首次购买日期,
+    MAX(order_date) AS 最近购买日期,
+    COUNT(DISTINCT order_date) AS 活跃天数
+FROM ecommerce_orders
+GROUP BY user_id
+ORDER BY 活跃天数 DESC;

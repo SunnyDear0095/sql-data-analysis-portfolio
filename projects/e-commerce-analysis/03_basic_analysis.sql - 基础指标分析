@@ -1,0 +1,23 @@
+-- 电商基础指标分析
+-- 1. 总销售额（GMV）
+SELECT SUM(price * quantity) AS 总销售额 FROM ecommerce_orders;
+
+-- 2. 总订单数
+SELECT COUNT(DISTINCT order_id) AS 总订单数 FROM ecommerce_orders;
+
+-- 3. 总用户数
+SELECT COUNT(DISTINCT user_id) AS 总用户数 FROM ecommerce_orders;
+
+-- 4. 平均客单价
+SELECT 
+    SUM(price * quantity) / COUNT(DISTINCT order_id) AS 平均客单价 
+FROM ecommerce_orders;
+
+-- 5. 每日销售额趋势
+SELECT 
+    order_date,
+    SUM(price * quantity) AS 日销售额,
+    COUNT(DISTINCT order_id) AS 日订单数
+FROM ecommerce_orders
+GROUP BY order_date
+ORDER BY order_date;
