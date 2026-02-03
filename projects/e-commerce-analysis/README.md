@@ -42,11 +42,7 @@ e-commerce-analysis/
 │ └── 05_user_analysis.sql
 └── README.md
 
-text
 
-复制
-
-下载
 
 ## 如何使用
 1. 运行 `sql/01_create_table.sql` 创建表
