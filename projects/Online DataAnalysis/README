@@ -1,0 +1,62 @@
+# 🛒 电商销售数据分析项目
+
+
+## 📊 项目简介
+这是一个针对英国电商公司2010-2011年交易数据的分析项目。通过Python进行数据清洗、分析和可视化，探索销售规律和客户行为。
+
+## 📈 数据集说明
+- **来源**：UCI Machine Learning Repository - Online Retail Dataset
+- **记录数**：541,909条交易记录
+- **时间范围**：2010年12月1日 - 2011年12月9日
+- **主要字段**：发票号、商品代码、商品描述、数量、发票日期、单价、客户ID、国家
+
+## 🔍 分析内容
+1. **数据清洗**：处理缺失值、异常值，清洗有效交易记录
+2. **销售分析**：月度销售趋势、Top10畅销商品
+3. **客户分析**：客户分布、RFM模型初步探索
+4. **地域分析**：各国销售额分布及占比
+
+## 📊 主要发现
+| 发现 | 具体数值 | 业务建议 |
+|------|---------|---------|
+| 总销售额 | £9.74M | - |
+| 有效客户数 | 4,372人 | 重点维护高价值客户 |
+| 英国占比 | 89.3% | 可拓展海外市场 |
+| 销售高峰 | 2011年11月 | 黑五促销效果显著 |
+
+## 🛠️ 技术栈
+- Python 3.8
+- Pandas：数据处理与分析
+- Matplotlib：数据可视化
+- Jupyter Notebook：交互式开发环境
+
+## 📁 项目结构
+ecommerce_project/
+├── data/
+│ └── Online Retail.xlsx # 原始数据集
+├── notebooks/
+│ └── ecommerce_analysis.ipynb # 分析代码
+├── outputs/
+│ ├── monthly_sales.png # 月度销售趋势图
+│ └── top_products.png # 畅销商品排行图
+└── README.md # 项目说明文档
+
+text
+
+## 🚀 如何运行
+1. 克隆本项目：`git clone [你的仓库地址]`
+2. 安装依赖：`pip install pandas matplotlib openpyxl`
+3. 运行Jupyter：`jupyter notebook`
+4. 打开 `notebooks/ecommerce_analysis.ipynb` 执行所有单元格
+
+## 📌 后续计划
+- [ ] 添加RFM客户价值分析
+- [ ] 构建销售预测模型
+- [ ] 用Streamlit制作交互式仪表板
+
+## 📧 联系我
+- GitHub：[@SunnyDear0095](https://github.com/SunnyDear0095)
+- 邮箱：3173151895@QQ.COM
+
+## 📄 许可证
+MIT License © 2026 史雅静
