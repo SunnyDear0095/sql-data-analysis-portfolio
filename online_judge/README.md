@@ -4,7 +4,7 @@
 
 ## 📚 平台目录
 - [牛客网](Niuke/) - 聚焦国内求职SQL真题
-- [LeetCode](leetcode/) - 覆盖全球技术面试高频题
+- [LeetCode](LeetCode/) - 覆盖全球技术面试高频题
 - [其他平台](other/) - 拓展练习与竞赛题目
 
 ## 🎯 刷题理念
