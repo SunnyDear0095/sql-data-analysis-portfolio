@@ -64,7 +64,7 @@ e-commerce-analysis/
 ## 可视化展示
 
 ### 1. 销售趋势分析
-![每日销售趋势](sales_trend.png)
+![每日销售趋势](销售趋势.xlsx)
 
 ### 2. 商品销售排行  
 ![热销商品TOP10](top_products.png)
